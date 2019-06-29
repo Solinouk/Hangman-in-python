@@ -7,7 +7,7 @@ class Scores :
     @staticmethod
     def store_score(name, score):
         # on stocke le score dans le fichier du joueur
-        with open("/home/solenne/Documents/GITHUB/HANGMAN_PYTHON/scores_pendu.txt", mode='a', encoding="utf8") as file:
+        with open("./scores_pendu.txt", mode='a', encoding="utf8") as file:
             score_dict = dict()
             score_dict[name] = score
             file.write(str(score_dict))
@@ -17,7 +17,7 @@ class Scores :
 
     @ staticmethod
     def get_score(name) :
-        with open("/home/solenne/Documents/GITHUB/HANGMAN_PYTHON/scores_pendu.txt", mode='r', encoding="utf8") as file:
+        with open("./scores_pendu.txt", mode='r', encoding="utf8") as file:
 
             for elmts in file :
                 for names, score in enumerate(elmts) :

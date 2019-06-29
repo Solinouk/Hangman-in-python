@@ -8,7 +8,7 @@ class Hangman :
 
     @ staticmethod
     def chose_word():
-        with open("/home/solenne/Documents/GITHUB/HANGMAN_PYTHON/words_8_letters.txt", mode='r', encoding="utf8") as file:
+        with open("./words_8_letters.txt", mode='r', encoding="utf8") as file:
             listeMots = list()
             [listeMots.append(l.split()) for l in file]
 
@@ -44,8 +44,6 @@ class Hangman :
             # Pendu.display_hangman()
             return letter, indexe, correct
 
-
-
     @staticmethod
     def display_word(word, displayed):
 
@@ -58,8 +56,6 @@ class Hangman :
         print("".join(displayed))
         return displayed, correct
 
-
-
     def display_hangman(self):
         #
         # if try == 1 :
@@ -68,8 +64,6 @@ class Hangman :
         #     display element 2
 
         pass
-
-
 
     @staticmethod
     def game_over(word, displayed):
@@ -90,14 +84,13 @@ class Hangman :
 
             else :
                 tries -= 1
-                if tries == 0 :
+                if tries == 0:
                     # print('le jeu est terminé', tries)
                     print(f'Vous avez perdu. Le mot était : {word}')
                     replay = input('voulez_vous rejouer ?')
                     return tries, replay
 
-
-                elif tries > 0 :
+                elif tries > 0:
                     print(f'Dommage... Il vous reste : {tries} essais')
                     pass
 
